@@ -1,6 +1,5 @@
 library(qualR)
 
-
 # Downloading O3 data for one week ----------------------------------------
 
 start_date <- "06/01/2020"
@@ -16,7 +15,6 @@ O3 <- lapply(rj_aqs$code, MonitorArRetrieve,
 
 
 # Function plot data in list ----------------------------------------------
-
 
 PlotFromList <- function(df, aqs_data=rj_aqs){
   code <- unique(df$aqs)
@@ -38,3 +36,9 @@ PlotFromList <- function(df, aqs_data=rj_aqs){
 
 # Plotting  ---------------------------------------------------------------
 lapply(O3, PlotFromList)
+
+
+# Function to plot from data frame ----------------------------------------
+
+all_aqs_o3 <- do.call(rbind, O3) # Merging all data in one data frame
+
