@@ -21,7 +21,7 @@ PlotFromList <- function(df, aqs_data=rj_aqs){
   title <- aqs_data$name[aqs_data$code == code]
   file_name <- paste0(code, "_o3.png")
   
-  if (is.na(unique(df$O3)[1])){
+  if (length(unique(df$O3)) == 1){
     print("No data available")
   } else {
     png(file_name, height = 550, width = 760)
@@ -47,7 +47,7 @@ PlotFromDataFrame <- function(df, code, aqs_data=rj_aqs){
   title <- aqs_data$name[aqs_data$code == code]
   file_name <- paste0(code, "_df_o3.png")
   
-  if (is.na(unique(aqs$O3)[1])){
+  if (length(unique(aqs$O3)) == 1){
     print("No data available")
   } else {
     png(file_name, height = 550, width = 760)
