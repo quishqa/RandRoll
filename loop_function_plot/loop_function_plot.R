@@ -58,3 +58,10 @@ PlotFromDataFrame <- function(df, code, aqs_data=rj_aqs){
     dev.off()
   }
 }
+
+
+# Plotting ----------------------------------------------------------------
+
+for (code in rj_aqs$code){
+  PlotFromDataFrame(all_aqs_o3, code)
+}
