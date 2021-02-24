@@ -42,3 +42,19 @@ lapply(O3, PlotFromList)
 
 all_aqs_o3 <- do.call(rbind, O3) # Merging all data in one data frame
 
+PlotFromDataFrame <- function(df, code, aqs_data=rj_aqs){
+  aqs <- subset(df, subset = aqs == code)
+  title <- aqs_data$name[aqs_data$code == code]
+  file_name <- paste0(code, "_df_o3.png")
+  
+  if (is.na(unique(aqs$O3)[1])){
+    print("No data available")
+  } else {
+    png(file_name, height = 550, width = 760)
+    plot(aqs$date, aqs$O3, t = "l", col = "green", lwd = 2.5,
+         main = title,
+         xlab = " ",
+         ylab = expression("O"[3] * " (" * mu * "g m"^-3 * ")"))
+    dev.off()
+  }
+}
