@@ -13,6 +13,10 @@ O3 <- lapply(rj_aqs$code, MonitorArRetrieve,
              param = "O3")
 
 
+# Saving data as RDS
+# saveRDS(O3, "rio_O3.rds")
+# O3 <- readRDS("rio_O3.rds") # You can load the data with this commmand
+
 
 # Function plot data in list ----------------------------------------------
 
