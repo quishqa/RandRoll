@@ -33,3 +33,7 @@ plot(pm25[[2]]$date, pm25[[2]]$pm25, t = "l", lwd = 1.5, col = "blue",
      ylab = "PM2.5", xlab = "2023", ylim = c(0, 45),
      main = unique(pm25[[2]]$aqs))
 dev.off()
+
+
+
+
